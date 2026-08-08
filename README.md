@@ -11,7 +11,7 @@ technical task round.
 - **Bonus** — Streamlit UI (`app.py`), CI eval (`.github/workflows/eval.yml`), prompt versioning (`prompts/`)
 
 ---
-## 🛠️ Tech Stack
+##  Tech Stack
 
 ```text
 ┌─────────────────────────────────────────────────────────────────────┐
@@ -44,6 +44,11 @@ technical task round.
 │                                                                     │
 │   Custom Rule-Based Evaluation  •  GitHub Actions  •  python-dotenv │
 └─────────────────────────────────────────────────────────────────────┘
+```
+
+
+---
+
 
 ```bash
 git clone <this-repo-url>
