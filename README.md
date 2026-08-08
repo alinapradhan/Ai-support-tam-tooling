@@ -11,6 +11,28 @@ technical task round.
 - **Bonus** — Streamlit UI (`app.py`), CI eval (`.github/workflows/eval.yml`), prompt versioning (`prompts/`)
 
 ---
+## Tech Stack :
+Python 3.12
+    │
+    ├── FastAPI + Uvicorn
+    │
+    ├── Anthropic API
+    │     └── Claude Sonnet 4.6
+    │
+    ├── Pydantic v2
+    │     └── Structured outputs
+    │
+    ├── BM25
+    │     └── Knowledge Base Retrieval
+    │
+    ├── JSON Files
+    │     └── Tickets / Accounts
+    │
+    ├── Streamlit
+    │     └── Demo UI
+    │
+    └── GitHub Actions
+          └── Automated Evaluation
 
 ## Setup
 
