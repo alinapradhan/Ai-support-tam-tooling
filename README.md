@@ -11,27 +11,39 @@ technical task round.
 - **Bonus** — Streamlit UI (`app.py`), CI eval (`.github/workflows/eval.yml`), prompt versioning (`prompts/`)
 
 ---
-## Tech Stack :
-**Backend**
-- Python 3.12
-- FastAPI + Uvicorn
+## 🛠️ Tech Stack
 
-**AI / RAG**
-- Anthropic API — Claude Sonnet 4.6
-- Pydantic v2
-- BM25 — Knowledge Base Retrieval
+```text
+┌─────────────────────────────────────────────────────────────────────┐
+│                         🤖 AI / RAG LAYER                            │
+│                                                                     │
+│   Anthropic API        Claude Sonnet 4.6        BM25 Retrieval      │
+│   Pydantic v2          Structured Outputs       Knowledge Base      │
+└──────────────────────────────┬──────────────────────────────────────┘
+                               │
+                               ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│                         ⚙️ BACKEND LAYER                            │
+│                                                                     │
+│                  Python 3.12  •  FastAPI  •  Uvicorn                │
+└──────────────────────────────┬──────────────────────────────────────┘
+                               │
+                 ┌─────────────┴─────────────┐
+                 ▼                           ▼
+┌────────────────────────┐       ┌──────────────────────────────────┐
+│     💾 DATA LAYER      │       │          🖥️ UI LAYER             │
+│                        │       │                                  │
+│  JSON Files            │       │  Streamlit                       │
+│  Tickets & Accounts    │       │  Demo Interface                  │
+└────────────────────────┘       └──────────────────────────────────┘
 
-**Data**
-- JSON files — Tickets & Accounts
-
-**UI & DevOps**
-- Streamlit
-- GitHub Actions
-- python-dotenv
-
-**Evaluation**
-- Custom rule-based evaluation
-## Setup
+                               │
+                               ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│                      🧪 EVALUATION & DEVOPS                         │
+│                                                                     │
+│   Custom Rule-Based Evaluation  •  GitHub Actions  •  python-dotenv │
+└─────────────────────────────────────────────────────────────────────┘
 
 ```bash
 git clone <this-repo-url>
