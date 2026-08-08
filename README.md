@@ -11,41 +11,31 @@ technical task round.
 - **Bonus** — Streamlit UI (`app.py`), CI eval (`.github/workflows/eval.yml`), prompt versioning (`prompts/`)
 
 ---
-##  Tech Stack
+## Repo structure
 
-```text
-┌─────────────────────────────────────────────────────────────────────┐
-│                         🤖 AI / RAG LAYER                            │
-│                                                                     │
-│   Anthropic API        Claude Sonnet 4.6        BM25 Retrieval      │
-│   Pydantic v2          Structured Outputs       Knowledge Base      │
-└──────────────────────────────┬──────────────────────────────────────┘
-                               │
-                               ▼
-┌─────────────────────────────────────────────────────────────────────┐
-│                         ⚙️ BACKEND LAYER                            │
-│                                                                     │
-│                  Python 3.12  •  FastAPI  •  Uvicorn                │
-└──────────────────────────────┬──────────────────────────────────────┘
-                               │
-                 ┌─────────────┴─────────────┐
-                 ▼                           ▼
-┌────────────────────────┐       ┌──────────────────────────────────┐
-│     💾 DATA LAYER      │       │          🖥️ UI LAYER             │
-│                        │       │                                  │
-│  JSON Files            │       │  Streamlit                       │
-│  Tickets & Accounts    │       │  Demo Interface                  │
-└────────────────────────┘       └──────────────────────────────────┘
-
-                               │
-                               ▼
-┌─────────────────────────────────────────────────────────────────────┐
-│                      🧪 EVALUATION & DEVOPS                         │
-│                                                                     │
-│   Custom Rule-Based Evaluation  •  GitHub Actions  •  python-dotenv │
-└─────────────────────────────────────────────────────────────────────┘
 ```
-
+support-tam-copilot/
+├── data/                       # tickets.json, accounts.json (synthetic sample - swap for real dataset)
+├── knowledge-base/             # product/troubleshooting/billing/onboarding markdown docs
+├── prompts/                    # versioned prompts (triage_v1.py, account_brief_v1.py) + CHANGELOG.md
+├── src/
+│   ├── schemas.py              # Pydantic models for all structured outputs
+│   ├── llm_client.py           # Anthropic API wrapper + MOCK_MODE fallback
+│   ├── retrieval.py            # BM25 retrieval over the knowledge base
+│   ├── data_access.py          # ticket/account loading helpers
+│   ├── triage.py               # Task 1
+│   └── account_brief.py        # Task 2
+├── eval/
+│   ├── test_cases.json         # 6 triage cases + 7 account-brief cases, incl. adversarial
+│   ├── run_eval.py             # Task 3 harness
+│   ├── eval_report.json        # generated
+│   └── eval_report.md          # generated
+├── main.py                     # FastAPI entry point
+├── app.py                      # Streamlit UI (bonus)
+├── DESIGN.md                   # Task 4
+├── requirements.txt
+└── .env.example
+```
 
 ---
 
@@ -121,30 +111,40 @@ streamlit run app.py
 ```
 A thin UI for triaging a ticket or generating an account brief without touching the API directly.
 
-## Repo structure
 
-```
-support-tam-copilot/
-├── data/                       # tickets.json, accounts.json (synthetic sample - swap for real dataset)
-├── knowledge-base/             # product/troubleshooting/billing/onboarding markdown docs
-├── prompts/                    # versioned prompts (triage_v1.py, account_brief_v1.py) + CHANGELOG.md
-├── src/
-│   ├── schemas.py              # Pydantic models for all structured outputs
-│   ├── llm_client.py           # Anthropic API wrapper + MOCK_MODE fallback
-│   ├── retrieval.py            # BM25 retrieval over the knowledge base
-│   ├── data_access.py          # ticket/account loading helpers
-│   ├── triage.py               # Task 1
-│   └── account_brief.py        # Task 2
-├── eval/
-│   ├── test_cases.json         # 6 triage cases + 7 account-brief cases, incl. adversarial
-│   ├── run_eval.py             # Task 3 harness
-│   ├── eval_report.json        # generated
-│   └── eval_report.md          # generated
-├── main.py                     # FastAPI entry point
-├── app.py                      # Streamlit UI (bonus)
-├── DESIGN.md                   # Task 4
-├── requirements.txt
-└── .env.example
+##  Tech Stack
+
+```text
+┌─────────────────────────────────────────────────────────────────────┐
+│                         🤖 AI / RAG LAYER                            │
+│                                                                     │
+│   Anthropic API        Claude Sonnet 4.6        BM25 Retrieval      │
+│   Pydantic v2          Structured Outputs       Knowledge Base      │
+└──────────────────────────────┬──────────────────────────────────────┘
+                               │
+                               ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│                         ⚙️ BACKEND LAYER                            │
+│                                                                     │
+│                  Python 3.12  •  FastAPI  •  Uvicorn                │
+└──────────────────────────────┬──────────────────────────────────────┘
+                               │
+                 ┌─────────────┴─────────────┐
+                 ▼                           ▼
+┌────────────────────────┐       ┌──────────────────────────────────┐
+│     💾 DATA LAYER      │       │          🖥️ UI LAYER             │
+│                        │       │                                  │
+│  JSON Files            │       │  Streamlit                       │
+│  Tickets & Accounts    │       │  Demo Interface                  │
+└────────────────────────┘       └──────────────────────────────────┘
+
+                               │
+                               ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│                      🧪 EVALUATION & DEVOPS                         │
+│                                                                     │
+│   Custom Rule-Based Evaluation  •  GitHub Actions  •  python-dotenv │
+└─────────────────────────────────────────────────────────────────────┘
 ```
 
 
