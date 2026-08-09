@@ -10,11 +10,6 @@ technical task round.
 - **Task 4** — Design Note → [`DESIGN.md`](./DESIGN.md)
 - **Bonus** — Streamlit UI (`app.py`), CI eval (`.github/workflows/eval.yml`), prompt versioning (`prompts/`)
 
-> **Note on the dataset:** this repo ships a small synthetic sample dataset (`data/tickets.json`,
-> `data/accounts.json`, `knowledge-base/`) matching the schema described in the starter repo's
-> `DATA_SCHEMA.md`. Drop the real `tickets.json` / `accounts.json` / KB markdown files into the same
-> paths to use the full 500-ticket / 50-account dataset — no code changes required.
-
 ---
 
 ## Setup
