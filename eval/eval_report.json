@@ -18,12 +18,12 @@
         "urgency_reasoning": "Rule-based mock classification (MOCK_MODE) based on keyword signals.",
         "kb_matches": [
           {
-            "doc_path": "troubleshooting/performance-and-integrations.md",
+            "doc_path": "troubleshooting\\performance-and-integrations.md",
             "doc_title": "Troubleshooting: Performance Issues",
             "reason": "Keyword/BM25 match on ticket content."
           },
           {
-            "doc_path": "products/databridge-pro.md",
+            "doc_path": "products\\databridge-pro.md",
             "doc_title": "DataBridge Pro \u2014 Product Reference",
             "reason": "Keyword/BM25 match on ticket content."
           }
@@ -52,12 +52,12 @@
         "urgency_reasoning": "Rule-based mock classification (MOCK_MODE) based on keyword signals.",
         "kb_matches": [
           {
-            "doc_path": "onboarding/onboarding-guide.md",
+            "doc_path": "onboarding\\onboarding-guide.md",
             "doc_title": "Onboarding Guide \u2014 New Customers & Users",
             "reason": "Keyword/BM25 match on ticket content."
           },
           {
-            "doc_path": "billing/billing-and-plans.md",
+            "doc_path": "billing\\billing-and-plans.md",
             "doc_title": "Billing & Plans \u2014 Reference Guide",
             "reason": "Keyword/BM25 match on ticket content."
           }
@@ -85,12 +85,12 @@
         "urgency_reasoning": "Rule-based mock classification (MOCK_MODE) based on keyword signals.",
         "kb_matches": [
           {
-            "doc_path": "troubleshooting/performance-and-integrations.md",
+            "doc_path": "troubleshooting\\performance-and-integrations.md",
             "doc_title": "Troubleshooting: Performance Issues",
             "reason": "Keyword/BM25 match on ticket content."
           },
           {
-            "doc_path": "troubleshooting/authentication-sso.md",
+            "doc_path": "troubleshooting\\authentication-sso.md",
             "doc_title": "Troubleshooting: Authentication & SSO",
             "reason": "Keyword/BM25 match on ticket content."
           }
@@ -119,12 +119,12 @@
         "urgency_reasoning": "Rule-based mock classification (MOCK_MODE) based on keyword signals.",
         "kb_matches": [
           {
-            "doc_path": "products/cloudsync.md",
+            "doc_path": "products\\cloudsync.md",
             "doc_title": "CloudSync \u2014 Product Reference",
             "reason": "Keyword/BM25 match on ticket content."
           },
           {
-            "doc_path": "troubleshooting/performance-and-integrations.md",
+            "doc_path": "troubleshooting\\performance-and-integrations.md",
             "doc_title": "Troubleshooting: Performance Issues",
             "reason": "Keyword/BM25 match on ticket content."
           }
@@ -153,12 +153,12 @@
         "urgency_reasoning": "Rule-based mock classification (MOCK_MODE) based on keyword signals.",
         "kb_matches": [
           {
-            "doc_path": "products/analyticshub.md",
+            "doc_path": "products\\analyticshub.md",
             "doc_title": "AnalyticsHub \u2014 Product Reference",
             "reason": "Keyword/BM25 match on ticket content."
           },
           {
-            "doc_path": "products/cloudsync.md",
+            "doc_path": "products\\cloudsync.md",
             "doc_title": "CloudSync \u2014 Product Reference",
             "reason": "Keyword/BM25 match on ticket content."
           }
@@ -186,12 +186,12 @@
         "urgency_reasoning": "Rule-based mock classification (MOCK_MODE) based on keyword signals.",
         "kb_matches": [
           {
-            "doc_path": "troubleshooting/performance-and-integrations.md",
+            "doc_path": "troubleshooting\\performance-and-integrations.md",
             "doc_title": "Troubleshooting: Performance Issues",
             "reason": "Keyword/BM25 match on ticket content."
           },
           {
-            "doc_path": "products/cloudsync.md",
+            "doc_path": "products\\cloudsync.md",
             "doc_title": "CloudSync \u2014 Product Reference",
             "reason": "Keyword/BM25 match on ticket content."
           }
@@ -244,7 +244,7 @@
           "Review root cause of the 2 recent P1 ticket(s).",
           "Follow up on low NPS score (4/10)."
         ],
-        "generated_at": "2026-08-08T18:41:14.927493+00:00",
+        "generated_at": "2026-08-09T10:36:41.660609+00:00",
         "input_hash": "260a3cbd8b41404a"
       }
     },
@@ -266,7 +266,7 @@
         "recommended_talking_points": [
           "Account is healthy - reinforce value delivered and explore expansion."
         ],
-        "generated_at": "2026-08-08T18:41:14.927807+00:00",
+        "generated_at": "2026-08-09T10:36:41.661638+00:00",
         "input_hash": "d58fdc41b6de4062"
       }
     },
@@ -304,7 +304,7 @@
           "Review root cause of the 1 recent P1 ticket(s).",
           "Follow up on low NPS score (3/10)."
         ],
-        "generated_at": "2026-08-08T18:41:14.928128+00:00",
+        "generated_at": "2026-08-09T10:36:41.663596+00:00",
         "input_hash": "e2b95275fc5d4f5b"
       }
     },
@@ -342,7 +342,7 @@
           "Review root cause of the 3 recent P1 ticket(s).",
           "Follow up on low NPS score (5/10)."
         ],
-        "generated_at": "2026-08-08T18:41:14.928409+00:00",
+        "generated_at": "2026-08-09T10:36:41.664596+00:00",
         "input_hash": "12f61331022395ba"
       }
     },
@@ -364,7 +364,7 @@
         "recommended_talking_points": [
           "Account is healthy - reinforce value delivered and explore expansion."
         ],
-        "generated_at": "2026-08-08T18:41:14.928621+00:00",
+        "generated_at": "2026-08-09T10:36:41.666594+00:00",
         "input_hash": "c7352f8287579a7e"
       }
     },
@@ -383,7 +383,7 @@
         "executive_summary": "No account record found for the given account_id. Cannot generate a brief without account data.",
         "risks_and_flags": [],
         "recommended_talking_points": [],
-        "generated_at": "2026-08-08T18:41:14.928789+00:00",
+        "generated_at": "2026-08-09T10:36:41.667596+00:00",
         "input_hash": "7c12c522a9edffa7"
       }
     },
@@ -425,7 +425,7 @@
           "Review root cause of the 2 recent P1 ticket(s).",
           "Follow up on low NPS score (4/10)."
         ],
-        "generated_at": "2026-08-08T18:41:14.928992+00:00",
+        "generated_at": "2026-08-09T10:36:41.668597+00:00",
         "input_hash": "260a3cbd8b41404a"
       }
     }
