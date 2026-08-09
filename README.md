@@ -115,5 +115,8 @@ support-tam-copilot/
 
 See [`DESIGN.md`](./DESIGN.md) for failure modes, the latency-vs-quality trade-off, PII/data-sensitivity
 handling, and scaling behavior at 10x volume.
-<img width="853" height="248" alt="image" src="https://github.com/user-attachments/assets/8097db04-8bc6-4d49-ad63-a0670aff0881" />
+POST METHOD :
+<img width="500" height="250" alt="image" src="https://github.com/user-attachments/assets/01440bd2-0dba-4c1f-b08b-bfcfac68773f" />
+GET METHOD:
+<img width="500" height="248" alt="image" src="https://github.com/user-attachments/assets/8097db04-8bc6-4d49-ad63-a0670aff0881" />
 
