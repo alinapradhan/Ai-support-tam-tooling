@@ -118,10 +118,12 @@ handling, and scaling behavior at 10x volume.
 
 
 POST METHOD :
+
 <img width="817" height="258" alt="image" src="https://github.com/user-attachments/assets/b8427739-f5b3-40af-a4bf-363961af3863" />
 
 
 GET METHOD:
+
 <img width="848" height="329" alt="image" src="https://github.com/user-attachments/assets/532595e5-fc71-4c69-a31c-6add455d7533" />
 
 
