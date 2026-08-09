@@ -21,7 +21,7 @@ python3 -m venv .venv && source .venv/bin/activate   # optional but recommended
 pip install -r requirements.txt
 
 cp .env.example .env
-# edit .env and add your ANTHROPIC_API_KEY
+# edit .env and add ANTHROPIC_API_KEY
 ```
 
 Without an API key, the pipeline still runs end-to-end in **MOCK_MODE** (deterministic, rule-based
@@ -116,6 +116,3 @@ support-tam-copilot/
 See [`DESIGN.md`](./DESIGN.md) for failure modes, the latency-vs-quality trade-off, PII/data-sensitivity
 handling, and scaling behavior at 10x volume.
 
-## Loom walkthrough
-
-_Add your Loom link here before submission._
