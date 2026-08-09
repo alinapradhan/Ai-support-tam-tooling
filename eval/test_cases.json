@@ -1,0 +1,157 @@
+{
+  "triage_cases": [
+    {
+      "id": "T1-01",
+      "description": "Clear P1 bug with repeated failure pattern (PIPELINE_STALLED) - should match DataBridge Pro KB doc",
+      "input": {
+        "subject": "DataBridge Pro pipeline stalled - PIPELINE_STALLED error every night",
+        "body": "Our nightly DataBridge Pro ingestion pipeline has thrown PIPELINE_STALLED: no heartbeat for 15 minutes on the last 4 nights in a row. Warehouse inventory counts are now out of sync with our ERP and our ops team is manually reconciling every morning. This is affecting live shipments. Please escalate."
+      },
+      "acceptance_criteria": {
+        "expected_urgency": ["P1"],
+        "expected_category": ["Bug"],
+        "requires_kb_match": true,
+        "min_confidence": 0.5
+      }
+    },
+    {
+      "id": "T1-02",
+      "description": "Simple how-to question referencing GROUP_NOT_MAPPED - should be low urgency, Tier-1 routed",
+      "input": {
+        "subject": "How do I map a new IDP group in SecureVault SSO?",
+        "body": "We onboarded a new department and their SSO logins are failing with GROUP_NOT_MAPPED. I think we just need to add a group mapping but couldn't find the exact steps. Can someone walk me through Settings > SSO > Group Mapping?"
+      },
+      "acceptance_criteria": {
+        "expected_urgency": ["P3", "P4"],
+        "expected_category": ["How-To"],
+        "requires_kb_match": true,
+        "min_confidence": 0.5
+      }
+    },
+    {
+      "id": "T1-03",
+      "description": "Churn-risk language should escalate urgency despite being phrased calmly",
+      "input": {
+        "subject": "Might not renew - budget review in Q4",
+        "body": "Just a heads up, finance is reviewing all software spend this quarter and WorkflowEngine is on the list given our team hasn't been using it much. Wanted support to know in case usage drops further."
+      },
+      "acceptance_criteria": {
+        "expected_urgency": ["P1", "P2", "P3"],
+        "expected_category": ["Billing", "Bug"],
+        "requires_kb_match": false,
+        "min_confidence": 0.3
+      }
+    },
+    {
+      "id": "T1-04",
+      "description": "Performance/timeout issue tied to a known KB error code (ERR_CONNECTION_TIMEOUT on a stalled CloudSync job)",
+      "input": {
+        "subject": "CloudSync files not updating, job shows ERR_CONNECTION_TIMEOUT",
+        "body": "Our largest CloudSync sync job has been stuck in STALLED state since yesterday, throwing ERR_CONNECTION_TIMEOUT repeatedly. Smaller jobs work fine. Files our warehouse team depends on haven't updated in over 24 hours now and it's blocking picking operations."
+      },
+      "acceptance_criteria": {
+        "expected_urgency": ["P1", "P2"],
+        "expected_category": ["Performance", "Integration", "Bug"],
+        "requires_kb_match": true,
+        "min_confidence": 0.5
+      }
+    },
+    {
+      "id": "T1-05",
+      "description": "Feature request - should be low urgency, routed to Product",
+      "input": {
+        "subject": "Feature request: scheduled export directly to S3",
+        "body": "It would be great if AnalyticsHub supported scheduled exports directly to an S3 bucket rather than us pulling reports manually from the Reports archive every week. Would simplify our pipeline significantly."
+      },
+      "acceptance_criteria": {
+        "expected_urgency": ["P3", "P4"],
+        "expected_category": ["Feature Request"],
+        "requires_kb_match": true,
+        "min_confidence": 0.4
+      }
+    },
+    {
+      "id": "T1-06-ADVERSARIAL",
+      "description": "Adversarial: extremely vague ticket with no real information - should NOT be confidently triaged",
+      "input": {
+        "subject": "thing is broken again",
+        "body": "not working. same as before. fix pls"
+      },
+      "acceptance_criteria": {
+        "expected_category": ["Ambiguous", "Bug"],
+        "requires_kb_match": false,
+        "max_confidence": 0.6,
+        "expect_needs_human_review": true
+      }
+    }
+  ],
+  "account_brief_cases": [
+    {
+      "id": "T2-01",
+      "description": "At-risk account with clear churn language in tickets - should be flagged with verbatim quotes",
+      "input": { "account_id": "ACC-1001" },
+      "acceptance_criteria": {
+        "min_risk_flags": 1,
+        "require_quote_substring_from_tickets": true,
+        "expected_health_mentioned": true
+      }
+    },
+    {
+      "id": "T2-02",
+      "description": "Healthy account with no open risk tickets - should produce few/no risk flags",
+      "input": { "account_id": "ACC-1004" },
+      "acceptance_criteria": {
+        "max_risk_flags": 1,
+        "require_quote_substring_from_tickets": true,
+        "expected_health_mentioned": true
+      }
+    },
+    {
+      "id": "T2-03",
+      "description": "Churning account with budget-cut language - must be flagged as Budget/Renewal or Churn Signal",
+      "input": { "account_id": "ACC-1003" },
+      "acceptance_criteria": {
+        "min_risk_flags": 1,
+        "expected_risk_types_present": ["Churn Signal", "Budget/Renewal", "Escalation"],
+        "require_quote_substring_from_tickets": true
+      }
+    },
+    {
+      "id": "T2-04",
+      "description": "Account with repeated escalations requesting leadership call - should surface in talking points",
+      "input": { "account_id": "ACC-1005" },
+      "acceptance_criteria": {
+        "min_risk_flags": 1,
+        "min_talking_points": 1,
+        "require_quote_substring_from_tickets": true
+      }
+    },
+    {
+      "id": "T2-05",
+      "description": "New account with minimal history - brief should still be well-formed and not fabricate risk",
+      "input": { "account_id": "ACC-1006" },
+      "acceptance_criteria": {
+        "max_risk_flags": 1,
+        "min_talking_points": 1,
+        "require_quote_substring_from_tickets": true
+      }
+    },
+    {
+      "id": "T2-06-ADVERSARIAL",
+      "description": "Adversarial: account_id with no matching account record - must degrade gracefully, not crash or fabricate",
+      "input": { "account_id": "ACC-DOES-NOT-EXIST" },
+      "acceptance_criteria": {
+        "expect_graceful_missing_account": true,
+        "max_risk_flags": 0
+      }
+    },
+    {
+      "id": "T2-07-DETERMINISM",
+      "description": "Adversarial/determinism: same account run twice must yield identical risk flags and talking points",
+      "input": { "account_id": "ACC-1001" },
+      "acceptance_criteria": {
+        "determinism_check": true
+      }
+    }
+  ]
+}

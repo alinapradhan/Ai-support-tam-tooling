@@ -1,0 +1,32 @@
+name: Eval Harness CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  run-eval:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run evaluation harness (MOCK_MODE - no API key needed in CI)
+        env:
+          MOCK_MODE: "1"
+        run: python -m eval.run_eval
+
+      - name: Upload eval report
+        uses: actions/upload-artifact@v4
+        with:
+          name: eval-report
+          path: |
+            eval/eval_report.json
+            eval/eval_report.md

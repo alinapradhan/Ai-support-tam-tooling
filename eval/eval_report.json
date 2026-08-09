@@ -1,0 +1,440 @@
+{
+  "triage": [
+    {
+      "id": "T1-01",
+      "description": "Clear P1 bug with repeated failure pattern (PIPELINE_STALLED) - should match DataBridge Pro KB doc",
+      "passed": true,
+      "quality_score": 1.0,
+      "notes": [
+        "urgency=P1 expected~['P1'] -> OK",
+        "category=Bug expected~['Bug'] -> OK",
+        "kb_matches=2 -> OK",
+        "confidence=0.70 >= 0.5 -> OK"
+      ],
+      "output": {
+        "product_area": "General",
+        "issue_category": "Bug",
+        "urgency": "P1",
+        "urgency_reasoning": "Rule-based mock classification (MOCK_MODE) based on keyword signals.",
+        "kb_matches": [
+          {
+            "doc_path": "troubleshooting/performance-and-integrations.md",
+            "doc_title": "Troubleshooting: Performance Issues",
+            "reason": "Keyword/BM25 match on ticket content."
+          },
+          {
+            "doc_path": "products/databridge-pro.md",
+            "doc_title": "DataBridge Pro \u2014 Product Reference",
+            "reason": "Keyword/BM25 match on ticket content."
+          }
+        ],
+        "recommended_team": "Tier-2 Engineering Support",
+        "draft_first_response": "Hi there, thanks for reaching out - we've logged your ticket and a member of our Tier-2 Engineering Support team will follow up shortly.",
+        "confidence": 0.7,
+        "needs_human_review": false
+      }
+    },
+    {
+      "id": "T1-02",
+      "description": "Simple how-to question referencing GROUP_NOT_MAPPED - should be low urgency, Tier-1 routed",
+      "passed": true,
+      "quality_score": 1.0,
+      "notes": [
+        "urgency=P4 expected~['P3', 'P4'] -> OK",
+        "category=How-To expected~['How-To'] -> OK",
+        "kb_matches=2 -> OK",
+        "confidence=0.70 >= 0.5 -> OK"
+      ],
+      "output": {
+        "product_area": "General",
+        "issue_category": "How-To",
+        "urgency": "P4",
+        "urgency_reasoning": "Rule-based mock classification (MOCK_MODE) based on keyword signals.",
+        "kb_matches": [
+          {
+            "doc_path": "onboarding/onboarding-guide.md",
+            "doc_title": "Onboarding Guide \u2014 New Customers & Users",
+            "reason": "Keyword/BM25 match on ticket content."
+          },
+          {
+            "doc_path": "billing/billing-and-plans.md",
+            "doc_title": "Billing & Plans \u2014 Reference Guide",
+            "reason": "Keyword/BM25 match on ticket content."
+          }
+        ],
+        "recommended_team": "Tier-1 Support",
+        "draft_first_response": "Hi there, thanks for reaching out - we've logged your ticket and a member of our Tier-1 Support team will follow up shortly.",
+        "confidence": 0.7,
+        "needs_human_review": false
+      }
+    },
+    {
+      "id": "T1-03",
+      "description": "Churn-risk language should escalate urgency despite being phrased calmly",
+      "passed": true,
+      "quality_score": 1.0,
+      "notes": [
+        "urgency=P3 expected~['P1', 'P2', 'P3'] -> OK",
+        "category=Billing expected~['Billing', 'Bug'] -> OK",
+        "confidence=0.70 >= 0.3 -> OK"
+      ],
+      "output": {
+        "product_area": "General",
+        "issue_category": "Billing",
+        "urgency": "P3",
+        "urgency_reasoning": "Rule-based mock classification (MOCK_MODE) based on keyword signals.",
+        "kb_matches": [
+          {
+            "doc_path": "troubleshooting/performance-and-integrations.md",
+            "doc_title": "Troubleshooting: Performance Issues",
+            "reason": "Keyword/BM25 match on ticket content."
+          },
+          {
+            "doc_path": "troubleshooting/authentication-sso.md",
+            "doc_title": "Troubleshooting: Authentication & SSO",
+            "reason": "Keyword/BM25 match on ticket content."
+          }
+        ],
+        "recommended_team": "Billing Ops",
+        "draft_first_response": "Hi there, thanks for reaching out - we've logged your ticket and a member of our Billing Ops team will follow up shortly.",
+        "confidence": 0.7,
+        "needs_human_review": false
+      }
+    },
+    {
+      "id": "T1-04",
+      "description": "Performance/timeout issue tied to a known KB error code (ERR_CONNECTION_TIMEOUT on a stalled CloudSync job)",
+      "passed": true,
+      "quality_score": 1.0,
+      "notes": [
+        "urgency=P1 expected~['P1', 'P2'] -> OK",
+        "category=Performance expected~['Performance', 'Integration', 'Bug'] -> OK",
+        "kb_matches=2 -> OK",
+        "confidence=0.70 >= 0.5 -> OK"
+      ],
+      "output": {
+        "product_area": "General",
+        "issue_category": "Performance",
+        "urgency": "P1",
+        "urgency_reasoning": "Rule-based mock classification (MOCK_MODE) based on keyword signals.",
+        "kb_matches": [
+          {
+            "doc_path": "products/cloudsync.md",
+            "doc_title": "CloudSync \u2014 Product Reference",
+            "reason": "Keyword/BM25 match on ticket content."
+          },
+          {
+            "doc_path": "troubleshooting/performance-and-integrations.md",
+            "doc_title": "Troubleshooting: Performance Issues",
+            "reason": "Keyword/BM25 match on ticket content."
+          }
+        ],
+        "recommended_team": "Tier-2 Engineering Support",
+        "draft_first_response": "Hi there, thanks for reaching out - we've logged your ticket and a member of our Tier-2 Engineering Support team will follow up shortly.",
+        "confidence": 0.7,
+        "needs_human_review": false
+      }
+    },
+    {
+      "id": "T1-05",
+      "description": "Feature request - should be low urgency, routed to Product",
+      "passed": true,
+      "quality_score": 1.0,
+      "notes": [
+        "urgency=P4 expected~['P3', 'P4'] -> OK",
+        "category=Feature Request expected~['Feature Request'] -> OK",
+        "kb_matches=2 -> OK",
+        "confidence=0.70 >= 0.4 -> OK"
+      ],
+      "output": {
+        "product_area": "General",
+        "issue_category": "Feature Request",
+        "urgency": "P4",
+        "urgency_reasoning": "Rule-based mock classification (MOCK_MODE) based on keyword signals.",
+        "kb_matches": [
+          {
+            "doc_path": "products/analyticshub.md",
+            "doc_title": "AnalyticsHub \u2014 Product Reference",
+            "reason": "Keyword/BM25 match on ticket content."
+          },
+          {
+            "doc_path": "products/cloudsync.md",
+            "doc_title": "CloudSync \u2014 Product Reference",
+            "reason": "Keyword/BM25 match on ticket content."
+          }
+        ],
+        "recommended_team": "Product Team",
+        "draft_first_response": "Hi there, thanks for reaching out - we've logged your ticket and a member of our Product Team team will follow up shortly.",
+        "confidence": 0.7,
+        "needs_human_review": false
+      }
+    },
+    {
+      "id": "T1-06-ADVERSARIAL",
+      "description": "Adversarial: extremely vague ticket with no real information - should NOT be confidently triaged",
+      "passed": true,
+      "quality_score": 1.0,
+      "notes": [
+        "category=Ambiguous expected~['Ambiguous', 'Bug'] -> OK",
+        "confidence=0.40 <= 0.6 -> OK",
+        "needs_human_review=True -> OK"
+      ],
+      "output": {
+        "product_area": "Unclassified",
+        "issue_category": "Ambiguous",
+        "urgency": "P2",
+        "urgency_reasoning": "Rule-based mock classification (MOCK_MODE) based on keyword signals.",
+        "kb_matches": [
+          {
+            "doc_path": "troubleshooting/performance-and-integrations.md",
+            "doc_title": "Troubleshooting: Performance Issues",
+            "reason": "Keyword/BM25 match on ticket content."
+          },
+          {
+            "doc_path": "products/cloudsync.md",
+            "doc_title": "CloudSync \u2014 Product Reference",
+            "reason": "Keyword/BM25 match on ticket content."
+          }
+        ],
+        "recommended_team": "Tier-1 Support (triage review)",
+        "draft_first_response": "Hi there, thanks for reaching out. Could you share a few more details (error messages, when this started, steps to reproduce) so we can route this to the right team quickly?",
+        "confidence": 0.4,
+        "needs_human_review": true
+      }
+    }
+  ],
+  "account_brief": [
+    {
+      "id": "T2-01",
+      "description": "At-risk account with clear churn language in tickets - should be flagged with verbatim quotes",
+      "passed": true,
+      "quality_score": 1.0,
+      "notes": [
+        "risk_flags=3 >= 1 -> OK",
+        "all quotes verbatim in source tickets -> OK",
+        "executive_summary non-trivial (210 chars) -> OK"
+      ],
+      "output": {
+        "account_id": "ACC-1001",
+        "company": "Northwind Logistics",
+        "executive_summary": "Northwind Logistics is on the Enterprise plan ($240,000 ARR) with health status 'At Risk' and a 'Declining' usage trend. There are 4 open tickets and 2 P1 tickets in the last 30 days. Renewal is due 2026-10-15.",
+        "risks_and_flags": [
+          {
+            "ticket_id": "TKT-10002",
+            "risk_type": "Churn Signal",
+            "quote": "This is the third pipeline outage this month. Our VP is now asking why we're paying Enterprise pricing for a",
+            "explanation": "Ticket language matches 'Churn Signal' risk pattern."
+          },
+          {
+            "ticket_id": "TKT-10002",
+            "risk_type": "Satisfaction",
+            "quote": "This is the third pipeline outage this month. Our VP is now asking why we're paying Enterprise pricing for a",
+            "explanation": "Low satisfaction score (2/5) on this ticket."
+          },
+          {
+            "ticket_id": "TKT-10001",
+            "risk_type": "Escalation",
+            "quote": "Our nightly DataBridge Pro ingestion pipeline has thrown PIPELINE_STALLED: no heartbeat for 15 minutes on the last 4 nights in",
+            "explanation": "Ticket language matches 'Escalation' risk pattern."
+          }
+        ],
+        "recommended_talking_points": [
+          "Proactively address reliability concerns before the 2026-10-15 renewal.",
+          "Discuss adoption blockers and identify underused seats/products.",
+          "Review root cause of the 2 recent P1 ticket(s).",
+          "Follow up on low NPS score (4/10)."
+        ],
+        "generated_at": "2026-08-08T18:41:14.927493+00:00",
+        "input_hash": "260a3cbd8b41404a"
+      }
+    },
+    {
+      "id": "T2-02",
+      "description": "Healthy account with no open risk tickets - should produce few/no risk flags",
+      "passed": true,
+      "quality_score": 1.0,
+      "notes": [
+        "risk_flags=0 <= 1 -> OK",
+        "all quotes verbatim in source tickets -> OK",
+        "executive_summary non-trivial (205 chars) -> OK"
+      ],
+      "output": {
+        "account_id": "ACC-1004",
+        "company": "Solaris Financial",
+        "executive_summary": "Solaris Financial is on the Enterprise plan ($310,000 ARR) with health status 'Healthy' and a 'Stable' usage trend. There are 2 open tickets and 0 P1 tickets in the last 30 days. Renewal is due 2027-03-30.",
+        "risks_and_flags": [],
+        "recommended_talking_points": [
+          "Account is healthy - reinforce value delivered and explore expansion."
+        ],
+        "generated_at": "2026-08-08T18:41:14.927807+00:00",
+        "input_hash": "d58fdc41b6de4062"
+      }
+    },
+    {
+      "id": "T2-03",
+      "description": "Churning account with budget-cut language - must be flagged as Budget/Renewal or Churn Signal",
+      "passed": true,
+      "quality_score": 1.0,
+      "notes": [
+        "risk_flags=2 >= 1 -> OK",
+        "risk_types={'Satisfaction', 'Budget/Renewal'} overlap ['Churn Signal', 'Budget/Renewal', 'Escalation'] -> OK",
+        "all quotes verbatim in source tickets -> OK"
+      ],
+      "output": {
+        "account_id": "ACC-1003",
+        "company": "Cascade Retail Group",
+        "executive_summary": "Cascade Retail Group is on the Professional plan ($54,000 ARR) with health status 'Churning' and a 'Inactive' usage trend. There are 3 open tickets and 1 P1 tickets in the last 30 days. Renewal is due 2026-09-01.",
+        "risks_and_flags": [
+          {
+            "ticket_id": "TKT-10005",
+            "risk_type": "Budget/Renewal",
+            "quote": "Just a heads up, finance is reviewing all software spend this quarter and WorkflowEngine is on the list given our",
+            "explanation": "Ticket language matches 'Budget/Renewal' risk pattern."
+          },
+          {
+            "ticket_id": "TKT-10004",
+            "risk_type": "Satisfaction",
+            "quote": "Our reorder automation in WorkflowEngine hasn't triggered in 2 weeks. No errors shown anywhere obvious. We haven't changed any config",
+            "explanation": "Low satisfaction score (2/5) on this ticket."
+          }
+        ],
+        "recommended_talking_points": [
+          "Proactively address reliability concerns before the 2026-09-01 renewal.",
+          "Discuss adoption blockers and identify underused seats/products.",
+          "Review root cause of the 1 recent P1 ticket(s).",
+          "Follow up on low NPS score (3/10)."
+        ],
+        "generated_at": "2026-08-08T18:41:14.928128+00:00",
+        "input_hash": "e2b95275fc5d4f5b"
+      }
+    },
+    {
+      "id": "T2-04",
+      "description": "Account with repeated escalations requesting leadership call - should surface in talking points",
+      "passed": true,
+      "quality_score": 1.0,
+      "notes": [
+        "risk_flags=2 >= 1 -> OK",
+        "talking_points=4 -> OK",
+        "all quotes verbatim in source tickets -> OK"
+      ],
+      "output": {
+        "account_id": "ACC-1005",
+        "company": "Fernwood Manufacturing",
+        "executive_summary": "Fernwood Manufacturing is on the Business plan ($88,000 ARR) with health status 'At Risk' and a 'Declining' usage trend. There are 5 open tickets and 3 P1 tickets in the last 30 days. Renewal is due 2026-11-05.",
+        "risks_and_flags": [
+          {
+            "ticket_id": "TKT-10008",
+            "risk_type": "Escalation",
+            "quote": "This is the fourth CloudSync sync issue in two months. Our IT director wants a direct call with your engineering",
+            "explanation": "Ticket language matches 'Escalation' risk pattern."
+          },
+          {
+            "ticket_id": "TKT-10008",
+            "risk_type": "Satisfaction",
+            "quote": "This is the fourth CloudSync sync issue in two months. Our IT director wants a direct call with your engineering",
+            "explanation": "Low satisfaction score (1/5) on this ticket."
+          }
+        ],
+        "recommended_talking_points": [
+          "Proactively address reliability concerns before the 2026-11-05 renewal.",
+          "Discuss adoption blockers and identify underused seats/products.",
+          "Review root cause of the 3 recent P1 ticket(s).",
+          "Follow up on low NPS score (5/10)."
+        ],
+        "generated_at": "2026-08-08T18:41:14.928409+00:00",
+        "input_hash": "12f61331022395ba"
+      }
+    },
+    {
+      "id": "T2-05",
+      "description": "New account with minimal history - brief should still be well-formed and not fabricate risk",
+      "passed": true,
+      "quality_score": 1.0,
+      "notes": [
+        "risk_flags=0 <= 1 -> OK",
+        "talking_points=1 -> OK",
+        "all quotes verbatim in source tickets -> OK"
+      ],
+      "output": {
+        "account_id": "ACC-1006",
+        "company": "Harbor Point Insurance",
+        "executive_summary": "Harbor Point Insurance is on the Professional plan ($42,000 ARR) with health status 'New' and a 'Increasing' usage trend. There are 1 open tickets and 0 P1 tickets in the last 30 days. Renewal is due 2027-05-14.",
+        "risks_and_flags": [],
+        "recommended_talking_points": [
+          "Account is healthy - reinforce value delivered and explore expansion."
+        ],
+        "generated_at": "2026-08-08T18:41:14.928621+00:00",
+        "input_hash": "c7352f8287579a7e"
+      }
+    },
+    {
+      "id": "T2-06-ADVERSARIAL",
+      "description": "Adversarial: account_id with no matching account record - must degrade gracefully, not crash or fabricate",
+      "passed": true,
+      "quality_score": 1.0,
+      "notes": [
+        "risk_flags=0 <= 0 -> OK",
+        "graceful missing-account handling -> OK"
+      ],
+      "output": {
+        "account_id": "ACC-DOES-NOT-EXIST",
+        "company": "Unknown",
+        "executive_summary": "No account record found for the given account_id. Cannot generate a brief without account data.",
+        "risks_and_flags": [],
+        "recommended_talking_points": [],
+        "generated_at": "2026-08-08T18:41:14.928789+00:00",
+        "input_hash": "7c12c522a9edffa7"
+      }
+    },
+    {
+      "id": "T2-07-DETERMINISM",
+      "description": "Adversarial/determinism: same account run twice must yield identical risk flags and talking points",
+      "passed": true,
+      "quality_score": 1.0,
+      "notes": [
+        "determinism (two runs identical) -> OK"
+      ],
+      "output": {
+        "account_id": "ACC-1001",
+        "company": "Northwind Logistics",
+        "executive_summary": "Northwind Logistics is on the Enterprise plan ($240,000 ARR) with health status 'At Risk' and a 'Declining' usage trend. There are 4 open tickets and 2 P1 tickets in the last 30 days. Renewal is due 2026-10-15.",
+        "risks_and_flags": [
+          {
+            "ticket_id": "TKT-10002",
+            "risk_type": "Churn Signal",
+            "quote": "This is the third pipeline outage this month. Our VP is now asking why we're paying Enterprise pricing for a",
+            "explanation": "Ticket language matches 'Churn Signal' risk pattern."
+          },
+          {
+            "ticket_id": "TKT-10002",
+            "risk_type": "Satisfaction",
+            "quote": "This is the third pipeline outage this month. Our VP is now asking why we're paying Enterprise pricing for a",
+            "explanation": "Low satisfaction score (2/5) on this ticket."
+          },
+          {
+            "ticket_id": "TKT-10001",
+            "risk_type": "Escalation",
+            "quote": "Our nightly DataBridge Pro ingestion pipeline has thrown PIPELINE_STALLED: no heartbeat for 15 minutes on the last 4 nights in",
+            "explanation": "Ticket language matches 'Escalation' risk pattern."
+          }
+        ],
+        "recommended_talking_points": [
+          "Proactively address reliability concerns before the 2026-10-15 renewal.",
+          "Discuss adoption blockers and identify underused seats/products.",
+          "Review root cause of the 2 recent P1 ticket(s).",
+          "Follow up on low NPS score (4/10)."
+        ],
+        "generated_at": "2026-08-08T18:41:14.928992+00:00",
+        "input_hash": "260a3cbd8b41404a"
+      }
+    }
+  ],
+  "mode": "MOCK",
+  "summary": {
+    "total_cases": 13,
+    "passed": 13,
+    "failed": 0,
+    "avg_quality_score": 1.0
+  }
+}
